@@ -13,7 +13,7 @@
     \brief Definition file for GewiEngine.
     
     Definition file for GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.h,v 1.5 2003/06/09 03:28:59 cozman Exp $<br>
+    <br>$Id: GewiEngine.h,v 1.6 2003/06/10 23:56:09 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -32,6 +32,7 @@
 namespace Gewi
 {
 
+
 /*!
     \brief Main GewiEngine Singleton Class
 
@@ -40,6 +41,12 @@ namespace Gewi
 **/
 class GewiEngine
 {
+    public:
+        //! Static version information.
+        static VersionInfo Version;
+        //! Required ZEngine version.
+        static VersionInfo MinZEVersion;
+
     private:
         //! Singleton static instance of GewiEngine.
         static GewiEngine *sInstance;

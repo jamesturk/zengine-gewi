@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.5 2003/06/09 03:28:43 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.6 2003/06/10 23:55:59 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -23,15 +23,25 @@
 namespace Gewi
 {
 
+VersionInfo GewiEngine::Version(0,2,0,"dev");
+VersionInfo GewiEngine::MinZEVersion(0,8,4,"dev");
 GewiEngine *GewiEngine::sInstance=NULL;
 
 GewiEngine::GewiEngine()
 {
-    ZEngine::GetInstance()->SetEventFilter((SDL_EventFilter)GewiEngine::EventFilter);
+    ZE::ZEngine *ze = ZE::ZEngine::GetInstance();
+
+    //check version of ZEngine
+    if(ZE::ZEngine::Version < GewiEngine::MinZEVersion)
+        ze->WriteLog(FormatStr("Gewi %s requires ZEngine %s or greater, ZEngine %s in use.",
+        GewiEngine::Version.GetString().c_str(), 
+        GewiEngine::MinZEVersion.GetString().c_str(), 
+        ZE::ZEngine::Version.GetString().c_str()));
+
+    ze->SetEventFilter((SDL_EventFilter)GewiEngine::EventFilter);
     SDL_EnableUNICODE(1);   //needed for the key translation
     SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL);
 }
-
 
 GewiEngine* GewiEngine::GetInstance()
 {
