@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.5 2003/06/09 03:28:43 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -24,12 +24,10 @@ namespace Gewi
 {
 
 GewiEngine *GewiEngine::sInstance=NULL;
-SDL_EventFilter GewiEngine::sOldFilter=NULL;
 
 GewiEngine::GewiEngine()
 {
-    sOldFilter = SDL_GetEventFilter();  //store event filter and set the new one
-    SDL_SetEventFilter((SDL_EventFilter)GewiEngine::EventFilter);
+    ZEngine::GetInstance()->SetEventFilter((SDL_EventFilter)GewiEngine::EventFilter);
     SDL_EnableUNICODE(1);   //needed for the key translation
     SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL);
 }
@@ -39,7 +37,6 @@ GewiEngine* GewiEngine::GetInstance()
 {
     if(!sInstance)
         sInstance = new GewiEngine;
-
     return sInstance;
 }
 
@@ -54,7 +51,7 @@ void GewiEngine::ReleaseInstance()
         //set everything back to default
         SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_INTERVAL,SDL_DEFAULT_REPEAT_INTERVAL);
         SDL_EnableUNICODE(0);
-        SDL_SetEventFilter(sOldFilter);
+        ZEngine::GetInstance()->SetEventFilter(NULL);
     }
 }
 
@@ -87,7 +84,7 @@ int GewiEngine::EventFilter(SDL_Event *event)
             gewi->SendMessage(event,GE_KUP,0,0,ch);
             break;
         case SDL_QUIT:
-            //.
+            GewiEngine::ReleaseInstance();
             break;
         default:
             break;

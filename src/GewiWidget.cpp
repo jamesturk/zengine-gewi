@@ -13,7 +13,7 @@
     \brief Implementation of GWidget.
     
     Implementation of GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.cpp,v 1.4 2003/05/21 02:47:56 cozman Exp $<br>
+    <br>$Id: GewiWidget.cpp,v 1.5 2003/06/09 03:28:43 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -38,8 +38,7 @@ GWidget::GWidget(GContainer *parent) :
     rParent(parent),
     rRelX(0),
     rRelY(0),
-    rVisible(true),
-    rAlive(true)
+    rVisible(true)
 {
     if(rParent)
         rParent->AddChild(this);
@@ -54,19 +53,6 @@ GWidget::~GWidget()
 void GWidget::ToggleVisible()
 {
     rVisible = !rVisible;
-}
-
-void GWidget::Kill()
-{
-    if(rParent)
-    {
-        rParent->ReleaseChild(this);
-        rParent = NULL;
-    }
-    else
-        rGewi->DeleteWidget(this);
-
-    rAlive = rVisible = false;
 }
 
 void GWidget::Create(float x, float y, float width, float height)

@@ -13,7 +13,7 @@
     \brief Definition file for GewiEngine.
     
     Definition file for GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.h,v 1.4 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiEngine.h,v 1.5 2003/06/09 03:28:59 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -43,8 +43,6 @@ class GewiEngine
     private:
         //! Singleton static instance of GewiEngine.
         static GewiEngine *sInstance;
-        //! SDL_EventFilter to store old event filter, GewiEngine sets it's own.
-        static SDL_EventFilter sOldFilter;
         //! Vector of pointers to ZImages, used by resource management system.
         vector<ZImage*> mImageVec;
         //! Vector of pointers to ZFonts, used by resource management system.

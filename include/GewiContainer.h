@@ -13,7 +13,7 @@
     \brief Definition file for GContainer.
     
     Definition file for GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.h,v 1.5 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiContainer.h,v 1.6 2003/06/09 03:28:59 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -79,12 +79,7 @@ class GContainer : public GWidget
         **/
         GContainer(GContainer *parent=NULL);
 
-        /*!
-            \brief Destroy container and children.
-
-            Deletes container and releases children, overloaded to free children.
-        **/
-        virtual void Kill();
+        ~GContainer();
 
         /*!
             \brief Move container and children.

@@ -13,7 +13,7 @@
     \brief Implementation of WidgetList.
     
     Implementation of WidgetList, a list of widgets used by GewiEngine and GContainers.
-    <br>$Id: GewiWidgetList.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiWidgetList.cpp,v 1.4 2003/06/09 03:28:43 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -83,7 +83,9 @@ void WidgetList::DeleteWidget(GWidget *widget)
         } while(cur != mWidgetList && !found);
 
         if(found)
+        {
             DeleteWidgetMem(found);
+        }
     }
 }
 
@@ -93,7 +95,7 @@ void WidgetList::DeleteWidgets()
     while(mWidgetList)
     {
         cur = cur->next;
-        cur->prev->widget->Kill();
+        DeleteWidgetMem(cur->prev);
     }
 }
 
@@ -165,12 +167,15 @@ void WidgetList::FitParent()
 void WidgetList::ShowWidgets()
 {
     WidgetNode *cur = mWidgetList;
-    do
+    if(mWidgetList)
     {
-        cur = cur->prev;        //draw from back to front, through list in reverse
-        if(cur->widget->Visible())
-            cur->widget->Show();
-    }while(cur != mWidgetList);
+        do
+        {
+            cur = cur->prev;        //draw from back to front, through list in reverse
+            if(cur->widget->Visible())
+                cur->widget->Show();
+        }while(cur != mWidgetList);
+    }
 }
 
 }

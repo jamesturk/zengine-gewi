@@ -13,7 +13,7 @@
     \brief Definition file for GWidget.
     
     Definition file for GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.h,v 1.4 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiWidget.h,v 1.5 2003/06/09 03:28:59 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -50,8 +50,6 @@ class GWidget
         float rRelY;
         //! Stores if widget is currently visible.
         bool rVisible;
-        //! Stores if widget is currently 'alive.'
-        bool rAlive;
 
     public:
         /*!
@@ -75,14 +73,6 @@ class GWidget
             Toggles the visible flag, only visible widgets are drawn.
         **/
         void ToggleVisible();
-
-        /*!
-            \brief Kill widget, and all data associated with it.
-
-            Widget frees itself from parent, and sets it's internal state to dead.
-            Virtual in case other things need to be freed.
-        **/
-        virtual void Kill();
 
         /*!
             \brief Reposition widget within parent.
