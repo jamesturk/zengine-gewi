@@ -52,7 +52,7 @@ void Test1()
     GStaticText label;
     
     bg.Open("data/rainbow.bmp");
-    bg.Resize(ze->Width(),ze->Height());
+    bg.Resize(ze->DisplayWidth(),ze->DisplayHeight());
 
     //opening the images//
     temp[0].Open("data/b1.bmp");
@@ -99,7 +99,7 @@ void Test1()
                 txtButton.SetState(false);
                 button.SetState(false);
             }
-            temp[2].SetAlpha(63+hSlider.GetPos()*64);
+            temp[2].SetAlpha(static_cast<Uint8>(63+hSlider.GetPos()*64));
 
             bg.Draw(0,0);
             gewi->Display();    //draws everything 
