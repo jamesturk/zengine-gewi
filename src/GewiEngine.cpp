@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -150,18 +150,12 @@ void GewiEngine::FreeResources()
     for(ResourceID i=0; i < mImageVec.size(); i++)
     {
         if(mImageVec[i])
-        {
             mImageVec[i]->Release();
-            delete mImageVec[i];
-        }
     }
     for(ResourceID i=0; i < mFontVec.size(); i++)
     {
         if(mFontVec[i])
-        {
             mFontVec[i]->Release();
-            delete mFontVec[i];
-        }
     }
 }
 

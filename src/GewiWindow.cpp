@@ -13,7 +13,7 @@
     \brief Implementation of GWindow.
     
     Implementation of GWindow, a basic window class based on GContainer.
-    <br>$Id: GewiWindow.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiWindow.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -22,8 +22,8 @@
 namespace Gewi
 {
 
-GWindow::GWindow() : 
-    GContainer(),
+GWindow::GWindow(GContainer *parent) : 
+    GContainer(parent),
     rDrag(false),
     rDragX(0),
     rDragY(0),

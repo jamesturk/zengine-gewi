@@ -13,7 +13,7 @@
     \brief Include file for Gewi.
     
     Include file for Gewi, contains external includes for Gewi.
-    <br>$Id: GewiIncludes.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
+    <br>$id: GewiIncludes.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -22,14 +22,10 @@
 
 #include <vector>
 #include <cmath>
-#include <limits>
+#include <climits>
 #include "ZEngine.h"
-typedef unsigned int WidgetID;
-typedef unsigned int ResourceID;
-enum GewiEvent { GE_LDOWN, GE_LUP, GE_RDOWN, GE_RUP, GE_KDOWN, GE_KUP, GE_GOTFOCUS, GE_LOSTFOCUS };
-enum _GewiJustify { GJ_CENTER = 0, GJ_LEFT = 1<<0, GJ_RIGHT = 1<<1, GJ_TOP = 1<<2, GJ_BOTTOM = 1<<3 };
-enum GButtonType { G_PRESS, G_HOVER };
-typedef unsigned int GewiJustify;
+#include "GewiDefines.h"
+
 using namespace std;
 using namespace ZE;
 

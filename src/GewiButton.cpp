@@ -13,7 +13,7 @@
     \brief Implementation of GButton.
     
     Implementation of GButton, a simple button class.
-    <br>$Id: GewiButton.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiButton.cpp,v 1.3 2003/06/07 05:42:32 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -25,7 +25,7 @@ namespace Gewi
 GButton::GButton(GContainer *parent) : 
     GWidget(parent),
     rPressed(false),
-    rType(G_PRESS),
+    rType(GBT_PRESS),
     rNormalImage(GewiEngine::InvalidID),
     rPressedImage(GewiEngine::InvalidID)
 {
@@ -64,14 +64,14 @@ void GButton::Show()
 
     if(rVisible)
     {
-        if(rType == G_PRESS)    //G_PRESS: standard press button, down when pressed, up when not
+        if(rType == GBT_PRESS)    //G_PRESS: standard press button, down when pressed, up when not
         {
             if(rPressed)
                 rGewi->Image(rPressedImage)->Draw(x,y);
             else
                 rGewi->Image(rNormalImage)->Draw(x,y);
         }
-        else if(rType == G_HOVER)   //G_HOVER: button shows as down when hovered over
+        else if(rType == GBT_HOVER)   //G_HOVER: button shows as down when hovered over
         {
             if(MouseInWidget())
                 rGewi->Image(rPressedImage)->Draw(x,y);
@@ -86,9 +86,9 @@ bool GButton::IsPressed()
     return rPressed;
 }
 
-void GButton::SetState(bool state)
+void GButton::SetState(bool pressed)
 {
-    rPressed = state;
+    rPressed = pressed;
 }
 
 }

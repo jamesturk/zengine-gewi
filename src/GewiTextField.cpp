@@ -13,7 +13,7 @@
     \brief Implementation of GTextField.
     
     Implementation of GTextField, text input area widget.
-    <br>$Id: GewiTextField.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiTextField.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -29,16 +29,6 @@ GTextField::GTextField(GContainer *parent) :
     rMaxChars(256),
     rLeftPadding(0)
 {}
-
-GTextField::~GTextField()
-{
-}
-
-void GTextField::Kill()
-{
-    rBuffer.Release();
-    GWidget::Kill();
-}
 
 void GTextField::Create(float x, float y, float width, float height, ResourceID font, ResourceID backgroundImg, int maxChars, int leftPad)
 {

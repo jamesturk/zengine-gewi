@@ -13,7 +13,7 @@
     \brief Implementation of GSlider, GHorizSlider and GVertSlider.
     
     Implementation of GSlider, GHorizSlider and GVertSlider, the slide-select classes for Gewi.
-    <br>$Id: GewiSlider.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiSlider.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -22,8 +22,8 @@
 namespace Gewi
 {
 
-GSlider::GSlider() :
-    GWidget(),
+GSlider::GSlider(GContainer *parent) :
+    GWidget(parent),
     rPressed(false),
     rBackground(GewiEngine::InvalidID),
     rSlider(GewiEngine::InvalidID),
