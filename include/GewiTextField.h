@@ -13,7 +13,7 @@
     \brief Definition file for GTextField.
     
     Definition file for GTextField, text input area widget.
-    <br>$Id: GewiTextField.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
+    <br>$Id: GewiTextField.h,v 1.4 2003/05/21 02:47:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -38,8 +38,7 @@ class GTextField : public GWidget
         GTextField(GContainer *parent=NULL);
         ~GTextField();
 
-        void Kill();
-
+        virtual void Kill();
         virtual void Create(float x, float y, float width, float height, ResourceID font, ResourceID backgroundImg, int maxChars=256, int leftPad=0);
         virtual void Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Uint16 mouseY, char ch);
         virtual void Show();

@@ -13,7 +13,7 @@
     \brief Definition file for GContainer.
     
     Definition file for GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
+    <br>$Id: GewiContainer.h,v 1.4 2003/05/21 02:47:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -41,9 +41,11 @@ class GContainer : public GWidget
         void InsertWidget(WidgetNode *node);
     public:
         GContainer(GContainer *parent=NULL);
-        void Move(float x, float y);
-        void Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Uint16 mouseY, char ch);
-        void Show();
+
+        virtual void Kill();
+        virtual void Move(float x, float y);
+        virtual void Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Uint16 mouseY, char ch);
+        virtual void Show();
 };
 
 }

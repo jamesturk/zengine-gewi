@@ -13,7 +13,7 @@
     \brief Implementation of GContainer.
     
     Implementation of GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiContainer.cpp,v 1.4 2003/05/21 02:47:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -41,6 +41,12 @@ void GContainer::InsertWidget(WidgetNode *node)   //insert at front
 
 GContainer::GContainer(GContainer *parent)
 {
+}
+
+void GContainer::Kill()
+{
+    rChildList.DeleteWidgets();
+    GWidget::Kill();
 }
 
 void GContainer::Move(float x, float y)

@@ -21,6 +21,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				OmitFramePointers="TRUE"
+				AdditionalIncludeDirectories="../include"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
 				StringPooling="TRUE"
 				RuntimeLibrary="2"
@@ -41,9 +42,10 @@ SDL_net.lib
 SDL_image.lib
 SDL_ttf.lib
 ZEngineS.lib
-c:\home\src\gewi\Release\gewi.lib"
-				OutputFile="$(OutDir)/gewitest.exe"
+gewi.lib"
+				OutputFile="../test/bin/GewiTest00.exe"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="../lib"
 				GenerateDebugInformation="TRUE"
 				SubSystem="2"
 				OptimizeReferences="2"
@@ -69,6 +71,9 @@ c:\home\src\gewi\Release\gewi.lib"
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="..\test\gewiTest00.cpp">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"

@@ -13,7 +13,7 @@
     \brief Implementation of GWidget.
     
     Implementation of GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiWidget.cpp,v 1.4 2003/05/21 02:47:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -66,7 +66,6 @@ void GWidget::Kill()
     else
         rGewi->DeleteWidget(this);
 
-    //rChildList.DeleteWidgets();
     rAlive = rVisible = false;
 }
 

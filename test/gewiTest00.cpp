@@ -13,13 +13,14 @@
 
 #include "ZEngine.h"
 #include "GewiEngine.h"
-#include "GButton.h"
-#include "GTextButton.h"
-#include "GWindow.h"
-#include "GTextField.h"
-#include "GSlider.h"
-#include "GStaticText.h"
+#include "GewiButton.h"
+#include "GewiTextButton.h"
+#include "GewiWindow.h"
+#include "GewiTextField.h"
+#include "GewiSlider.h"
+#include "GewiStaticText.h"
 using namespace ZE;
+using namespace Gewi;
 
 void Init()
 {
@@ -43,8 +44,8 @@ void Init()
 void Test1()
 {
     ZEngine *ze = ZEngine::GetInstance();
-    Gewi *gewi = Gewi::GetInstance();
-    ZImage bg("rainbow.bmp"),buf;
+    GewiEngine *gewi = GewiEngine::GetInstance();
+    ZImage bg("data/rainbow.bmp"),buf;
     ResourceID id1,id2,id3,id4,id5,id6,id7,id8,id9;
     GWindow w1;
     GTextButton tb1;    
@@ -59,14 +60,14 @@ void Test1()
 
     ZImage *temp,*temp2,*temp3,*temp4,*temp5,*temp6,*temp7,*temp8;
     ZFont *font;
-    temp = new ZImage("b1.bmp");
-    temp2 = new ZImage("b2.bmp");
-    temp3 = new ZImage("skin1.bmp");
-    temp4 = new ZImage("text.bmp");
-    temp5 = new ZImage("bg3.bmp");
-    temp6 = new ZImage("slider.bmp");
-    temp7 = new ZImage("bg4.bmp");
-    temp8 = new ZImage("slider2.bmp");
+    temp = new ZImage("data/b1.bmp");
+    temp2 = new ZImage("data/b2.bmp");
+    temp3 = new ZImage("data/skin1.bmp");
+    temp4 = new ZImage("data/text.bmp");
+    temp5 = new ZImage("data/bg3.bmp");
+    temp6 = new ZImage("data/slider.bmp");
+    temp7 = new ZImage("data/bg4.bmp");
+    temp8 = new ZImage("data/slider2.bmp");
     font = new ZFont("c:\\windows\\fonts\\arial.ttf",20);
     temp->SetColorKey(255,0,255);
     temp2->SetColorKey(255,0,255);
@@ -92,7 +93,7 @@ void Test1()
     s1.Create(100,500,200,50,id6,id7,0,3,1);
     s2.Create(700,200,50,200,id8,id9,0,200,5);
     hb1.Create(70,40,100,100,id1,id2,G_HOVER);
-    st1.Create(100,100,100,100,id4,Gewi::InvalidID,"static",GJ_CENTER);
+    st1.Create(100,100,100,100,id4,Gewi::GewiEngine::InvalidID,"static",GJ_CENTER);
 
     do
     {
@@ -131,7 +132,7 @@ void Test1()
 
     } while(!ze->QuitRequested());
 
-    Gewi::ReleaseInstance();
+    GewiEngine::ReleaseInstance();
 }
 
 int main(int argc, char *argv[])
