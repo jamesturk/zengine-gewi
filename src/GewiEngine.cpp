@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.6 2003/06/10 23:55:59 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.7 2003/06/11 00:19:29 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -33,7 +33,7 @@ GewiEngine::GewiEngine()
 
     //check version of ZEngine
     if(ZE::ZEngine::Version < GewiEngine::MinZEVersion)
-        ze->WriteLog(FormatStr("Gewi %s requires ZEngine %s or greater, ZEngine %s in use.",
+        ze->WriteLog(ZE::FormatStr("Gewi %s requires ZEngine %s or greater, ZEngine %s in use.",
         GewiEngine::Version.GetString().c_str(), 
         GewiEngine::MinZEVersion.GetString().c_str(), 
         ZE::ZEngine::Version.GetString().c_str()));
@@ -61,7 +61,7 @@ void GewiEngine::ReleaseInstance()
         //set everything back to default
         SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_INTERVAL,SDL_DEFAULT_REPEAT_INTERVAL);
         SDL_EnableUNICODE(0);
-        ZEngine::GetInstance()->SetEventFilter(NULL);
+        ZE::ZEngine::GetInstance()->SetEventFilter(NULL);
     }
 }
 
@@ -122,19 +122,19 @@ void GewiEngine::Display()
     mWidgetList.ShowWidgets();
 }
 
-ResourceID GewiEngine::AddResource(ZImage *image)
+ResourceID GewiEngine::AddResource(ZE::ZImage *image)
 {
     mImageVec.push_back(image);
     return static_cast<ResourceID>(mImageVec.size()-1);
 }
 
-ResourceID GewiEngine::AddResource(ZFont *font)
+ResourceID GewiEngine::AddResource(ZE::ZFont *font)
 {
     mFontVec.push_back(font);
     return static_cast<ResourceID>(mFontVec.size()-1);
 }
 
-ZImage* GewiEngine::Image(ResourceID id)
+ZE::ZImage* GewiEngine::Image(ResourceID id)
 {
     //do range checking
     if(id >= 0 && id < mImageVec.size())
@@ -143,7 +143,7 @@ ZImage* GewiEngine::Image(ResourceID id)
         return NULL;
 }
 
-ZFont* GewiEngine::Font(ResourceID id)
+ZE::ZFont* GewiEngine::Font(ResourceID id)
 {
     //do range checking
     if(id >= 0 && id < mFontVec.size())

@@ -13,7 +13,7 @@
     \brief Implementation of GStaticText.
     
     Implementation of GStaticText, file to hold static text, labels and such.
-    <br>$Id: GewiStaticText.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
+    <br>$Id: GewiStaticText.cpp,v 1.5 2003/06/11 00:19:29 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -34,7 +34,7 @@ GStaticText::GStaticText(GContainer *parent) :
 
 
 void GStaticText::Create(float x, float y, float width, float height, 
-                         ResourceID font, string text, GewiJustify justify, ResourceID backgroundImg)
+                         ResourceID font, std::string text, GewiJustify justify, ResourceID backgroundImg)
 {
     GWidget::Create(x,y,width,height);
     
@@ -61,7 +61,7 @@ void GStaticText::Show()
 }
 
 
-void GStaticText::SetText(string text)
+void GStaticText::SetText(std::string text)
 {
     int w,h;
 
@@ -94,7 +94,7 @@ void GStaticText::SetText(string text)
     }
 }
 
-string GStaticText::GetText()
+std::string GStaticText::GetText()
 {
     return rText;
 }

@@ -13,7 +13,7 @@
     \brief Definition file for GTextField.
     
     Definition file for GTextField, text input area widget.
-    <br>$Id: GewiTextField.h,v 1.5 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiTextField.h,v 1.6 2003/06/11 00:19:40 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -35,9 +35,9 @@ class GTextField : public GWidget
 {
     protected:
         //! Text currently entered.
-        string rText;
+        std::string rText;
         //! Text buffer, used internally.
-        ZImage rBuffer;
+        ZE::ZImage rBuffer;
         //! Font for text.
         ResourceID rFont;
         //! Background for text input area.
@@ -96,7 +96,7 @@ class GTextField : public GWidget
             Sets the current text of the buffer for input area.
             \param text New text for button.
         **/
-        void SetText(string text);
+        void SetText(std::string text);
 
         /*!
             \brief Get current text of the input box.
@@ -104,7 +104,7 @@ class GTextField : public GWidget
             Return text in the input buffer.
             \return text currently in input buffer.
         **/
-        string GetText();
+        std::string GetText();
 };
 
 }

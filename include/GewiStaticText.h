@@ -13,7 +13,7 @@
     \brief Definition file for GStaticText.
     
     Definition file for GStaticText, file to hold static text, labels and such.
-    <br>$Id: GewiStaticText.h,v 1.4 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiStaticText.h,v 1.5 2003/06/11 00:19:40 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -39,9 +39,9 @@ class GStaticText : public GWidget
         //! Font to use for label.
         ResourceID rFont;
         //! Current text of label.
-        string rText;
+        std::string rText;
         //! Text buffer ZImage, used internally.
-        ZImage rTextBuf;
+        ZE::ZImage rTextBuf;
         //! Calculated X Offset for text, calculated from justification.
         int rXOff;
         //! Calculated Y Offset for text, calculated from justification.
@@ -71,7 +71,7 @@ class GStaticText : public GWidget
             \param backgroundImg Image for background, defaults to GewiEngine::InvalidID.
         **/
         virtual void Create(float x, float y, float width, float height, 
-            ResourceID font, string text=" ", GewiJustify just=GJ_CENTER, ResourceID backgroundImg=GewiEngine::InvalidID);
+            ResourceID font, std::string text=" ", GewiJustify just=GJ_CENTER, ResourceID backgroundImg=GewiEngine::InvalidID);
 
         /*!
             \brief Overload of Message, used to recieve messages.
@@ -98,7 +98,7 @@ class GStaticText : public GWidget
             Sets the current text of the label.
             \param text New text for label.
         **/
-        void SetText(string text);
+        void SetText(std::string text);
 
         /*!
             \brief Get current text in label.
@@ -106,7 +106,7 @@ class GStaticText : public GWidget
             Return text in label.
             \return text currently in label.
         **/
-        string GetText();
+        std::string GetText();
 };
 
 }

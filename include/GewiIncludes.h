@@ -20,13 +20,11 @@
 #ifndef __gewiincludes_h__
 #define __gewiincludes_h__
 
+#include <string>
 #include <vector>
 #include <cmath>
 #include <climits>
 #include "ZEngine.h"
 #include "GewiDefines.h"
-
-using namespace std;
-using namespace ZE;
 
 #endif //__gewiincludes_h__

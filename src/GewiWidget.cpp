@@ -13,7 +13,7 @@
     \brief Implementation of GWidget.
     
     Implementation of GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.cpp,v 1.5 2003/06/09 03:28:43 cozman Exp $<br>
+    <br>$Id: GewiWidget.cpp,v 1.6 2003/06/11 00:19:29 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -34,7 +34,7 @@ void GWidget::FitParent()   //adjust to relative pos + parent pos
 
 GWidget::GWidget(GContainer *parent) :
     rGewi(GewiEngine::GetInstance()),
-    rZE(ZEngine::GetInstance()),
+    rZE(ZE::ZEngine::GetInstance()),
     rParent(parent),
     rRelX(0),
     rRelY(0),

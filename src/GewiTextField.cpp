@@ -13,7 +13,7 @@
     \brief Implementation of GTextField.
     
     Implementation of GTextField, text input area widget.
-    <br>$Id: GewiTextField.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
+    <br>$Id: GewiTextField.cpp,v 1.5 2003/06/11 00:19:29 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -61,13 +61,13 @@ void GTextField::Show()
         rBuffer.Draw(rLeftPadding+rBoundRect.X(),rBoundRect.Y()+(rBoundRect.Height()-rBuffer.Height())/2);
 }
 
-void GTextField::SetText(string text)
+void GTextField::SetText(std::string text)
 {
     rText = text;
     rGewi->Font(rFont)->DrawText(rText,rBuffer);
 }
 
-string GTextField::GetText()
+std::string GTextField::GetText()
 {
     return rText;
 }

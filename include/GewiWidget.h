@@ -13,7 +13,7 @@
     \brief Definition file for GWidget.
     
     Definition file for GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.h,v 1.5 2003/06/09 03:28:59 cozman Exp $<br>
+    <br>$Id: GewiWidget.h,v 1.6 2003/06/11 00:19:40 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -39,9 +39,9 @@ class GWidget
         //! Pointer to GewiEngine instance.
         GewiEngine *rGewi;
         //! Pointer to ZEngine instance.
-        ZEngine *rZE;
+        ZE::ZEngine *rZE;
         //! Rectangle describing area of widget.
-        ZRect rBoundRect;
+        ZE::ZRect rBoundRect;
         //! Pointer to parent container. (NULL means it lays in the global setting).
         GContainer *rParent;
         //! Relative X position, relative to parent, or top corner of screen if in global setting.

@@ -13,7 +13,7 @@
     \brief Implementation of GTextButton.
     
     Implementation of GTextButton, a GButton that has a text label.
-    <br>$Id: GewiTextButton.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
+    <br>$Id: GewiTextButton.cpp,v 1.4 2003/06/11 00:19:29 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -31,7 +31,7 @@ GTextButton::GTextButton(GContainer *parent) :
 
 
 void GTextButton::Create(float x, float y, float width, float height, ResourceID normalImg, ResourceID pressImg, ResourceID font,
-             string text, GButtonType type)
+             std::string text, GButtonType type)
 {
     GButton::Create(x,y,width,height,normalImg,pressImg,type);
     rFont = font;
@@ -49,7 +49,7 @@ void GTextButton::Show()
         rTextBuf.Draw(rBoundRect.X()+rXOff,rBoundRect.Y()+rYOff);   //draw text shifted by offset
 }
 
-void GTextButton::SetText(string text)
+void GTextButton::SetText(std::string text)
 {
     rText = text;
     rGewi->Font(rFont)->DrawText(rText,rTextBuf);
@@ -58,7 +58,7 @@ void GTextButton::SetText(string text)
     rYOff = static_cast<int>(rBoundRect.Height()-rTextBuf.Height())/2;
 }
 
-string GTextButton::GetText()
+std::string GTextButton::GetText()
 {
     return rText;
 }

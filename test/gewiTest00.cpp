@@ -10,6 +10,7 @@
 
 #include "ZEngine.h"
 #include "Gewi.h"
+#include <string>
 using namespace ZE;
 using namespace Gewi;
 
@@ -20,7 +21,7 @@ void Init()
     ZConfigFile cfg("gewiTest.zcf");
     int w,h,bpp;
     bool fs;
-    string title;
+    std::string title;
 
     w = cfg.GetInt("screen","width",800);
     h = cfg.GetInt("screen","height",600);

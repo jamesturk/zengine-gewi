@@ -13,7 +13,7 @@
     \brief Definition file for GTextButton.
     
     Definition file for GTextButton, a GButton that has a text label.
-    <br>$Id: GewiTextButton.h,v 1.4 2003/06/07 05:41:18 cozman Exp $<br>
+    <br>$Id: GewiTextButton.h,v 1.5 2003/06/11 00:19:40 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -35,9 +35,9 @@ class GTextButton : public GButton
 {
     protected:
         //! Text label for button.
-        string rText;
+        std::string rText;
         //! Text Buffer, used internally.
-        ZImage rTextBuf;
+        ZE::ZImage rTextBuf;
         //! X offset of text.
         int rXOff;
         //! Y offset of text.
@@ -69,7 +69,7 @@ class GTextButton : public GButton
             \param type GButtonType, either the default, GBT_PRESS (normal button), or GBT_HOVER (a button which responds to the hovering mouse).
         **/
         virtual void Create(float x, float y, float width, float height, ResourceID normalImg, ResourceID pressImg, ResourceID font,
-            string text=" ", GButtonType type=GBT_PRESS);
+            std::string text=" ", GButtonType type=GBT_PRESS);
         
         /*!
             \brief Draws static label to the screen.
@@ -84,7 +84,7 @@ class GTextButton : public GButton
             Sets the current text of the button.
             \param text New text for button.
         **/
-        void SetText(string text);
+        void SetText(std::string text);
 
         /*!
             \brief Get current text of button label.
@@ -92,7 +92,7 @@ class GTextButton : public GButton
             Return text on button label.
             \return text currently on button label.
         **/
-        string GetText();
+        std::string GetText();
 };
 
 }

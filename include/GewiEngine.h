@@ -13,7 +13,7 @@
     \brief Definition file for GewiEngine.
     
     Definition file for GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.h,v 1.6 2003/06/10 23:56:09 cozman Exp $<br>
+    <br>$Id: GewiEngine.h,v 1.7 2003/06/11 00:19:40 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -51,9 +51,9 @@ class GewiEngine
         //! Singleton static instance of GewiEngine.
         static GewiEngine *sInstance;
         //! Vector of pointers to ZImages, used by resource management system.
-        vector<ZImage*> mImageVec;
+        std::vector<ZE::ZImage*> mImageVec;
         //! Vector of pointers to ZFonts, used by resource management system.
-        vector<ZFont*> mFontVec;
+        std::vector<ZE::ZFont*> mFontVec;
         //! List of widgets in global context.
         WidgetList mWidgetList;
 
@@ -122,7 +122,7 @@ class GewiEngine
             \param image Image to add to resources.
             \return ID number of new resource.
         **/
-        ResourceID AddResource(ZImage *image);
+        ResourceID AddResource(ZE::ZImage *image);
 
         /*!
             \brief Adds a font resource to the private vector.
@@ -131,7 +131,7 @@ class GewiEngine
             \param font Font to add to resources.
             \return ID number of new resource.
         **/
-        ResourceID AddResource(ZFont *font);
+        ResourceID AddResource(ZE::ZFont *font);
 
         /*!
             \brief Access an image in the resource vector.
@@ -140,7 +140,7 @@ class GewiEngine
             \param id ID of image to retrieve.
             \return Pointer to image or NULL if invalid ID for images.
         **/
-        ZImage* Image(ResourceID id);
+        ZE::ZImage* Image(ResourceID id);
 
         /*!
             \brief Access a font in the resource vector.
@@ -149,7 +149,7 @@ class GewiEngine
             \param id ID of font to retrieve.
             \return Pointer to font or NULL if invalid ID for fonts.
         **/
-        ZFont* Font(ResourceID id);
+        ZE::ZFont* Font(ResourceID id);
 
         /*!
             \brief Free all resources.
