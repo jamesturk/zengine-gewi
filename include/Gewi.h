@@ -4,7 +4,7 @@
 
     Header file for the Gewi GUI lib, an addon for the ZEngine Game Engine, both from Concept of Zero, this is the 
     file that programs that wish to use should include.
-    <br>$Id: Gewi.h,v 1.4 2003/08/01 20:57:25 cozman Exp $<br>
+    <br>$Id: Gewi.h,v 1.5 2003/08/10 01:43:18 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -27,9 +27,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;-Because Gewi relys so heavily on ZEngine it has no website, if anybody writes a version of Gewi
     that does not use the ZEngine backend I'd be glad to see it and even integrate it with the ZEngine/Gewi source.  Until
     there is some other version, Gewi will always be found right next to ZEngine.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;-The Gewi website : http://zengine.sourceforge.net/gewi/.<br>
     &nbsp;&nbsp;&nbsp;&nbsp;-The ZEngine website : http://zengine.sourceforge.net/.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;-The ZEngine tutorials : http://conceptofzero.net/tutorials/zengine/.<br>
     
     \section Licensing Licensing
     <br>
@@ -44,7 +42,7 @@
     \section Authors Contributing Authors
     <br>
     James Turk <a href="mailto:james@conceptofzero.net">james@conceptofzero.net</a> - Core Engine, Design, Docs, and Classes<br>
-    Atani <a href="atani@atani-software.net">atani@atani-software.net</a> - Revised Linux Build System<br>
+    Atani <a href="mailto:atani@atani-software.net">atani@atani-software.net</a> - Revised Linux Build System<br>
 **/
 
 #ifndef __gewi_h__
