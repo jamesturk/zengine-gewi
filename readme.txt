@@ -22,14 +22,15 @@ The CVS page: http://sourceforge.net/cvs/?group_id=62098
 ------------------------------------------------------------
 III. Building Gewi:
 
-ZEngine can be built on any system that has SDL and OpenGL available.  It is
-currently being developed Windows XP (Redhat 8 support soon).  If you are in
-VC++ the folder vc7 contains project files for use, and if you are in mingw 
-or cygwin you can change the linux makefile to suit your needs.
+So far, Gewi can be built on any system any system that has SDL and OpenGL 
+available. If you are in VC++ the folder vc7 contains project files for use,
+and if you are in a gcc compiler you can change the config & makefile to meet
+your needs.
 -If you are using VC++ you will need to add the path to the dependencies (SDL 
 and others) as well as the path to ZEngine before building.
-If you are having a problem building ask at 
-http://www.conceptofzero.net/forums/index.php?act=SF&f=15
+
+If you are having a problem building ask at the ZEngine forum.
+(Click forum link at http://zengine.sourceforge.net)
 ------------------------------------------------------------
 IV. Using Gewi:
 
