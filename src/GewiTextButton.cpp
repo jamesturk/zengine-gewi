@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file ZE_ZConfigFile.h
-    \brief Definition file for ZConfigFile.
+    \file GewiTextButton.h
+    \brief Implementation of GTextButton.
     
-    Definition file for ZConfigFile, an INI-style config file format.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Implementation of GTextButton, a GButton that has a text label.
+    <br>$Id: GewiTextButton.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
     \author James Turk
 **/
 
