@@ -13,7 +13,7 @@
     \brief Implementation of GWindow.
     
     Implementation of GWindow, a basic window class based on GContainer.
-    <br>$Id: GewiWindow.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
+    <br>$Id: GewiWindow.cpp,v 1.5 2003/08/10 01:40:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -67,7 +67,7 @@ void GWindow::Show()
         }
 
         //resize (shared resources) and draw
-        rGewi->Image(rBackground)->Resize(static_cast<unsigned int>(rBoundRect.Width()),static_cast<unsigned int>(rBoundRect.Height()));
+        rGewi->Image(rBackground)->Resize(rBoundRect.Width(),rBoundRect.Height());
         rGewi->Image(rBackground)->Draw(rBoundRect.X(),rBoundRect.Y());
 
         GContainer::Show();    //important that a window draws it's children

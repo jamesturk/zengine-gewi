@@ -13,7 +13,7 @@
     \brief Implementation of GButton.
     
     Implementation of GButton, a simple button class.
-    <br>$Id: GewiButton.cpp,v 1.3 2003/06/07 05:42:32 cozman Exp $<br>
+    <br>$Id: GewiButton.cpp,v 1.4 2003/08/10 01:40:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -50,15 +50,15 @@ void GButton::Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Uint1
 void GButton::Show()
 {
     float x,y;
-    unsigned int w,h;
+    float w,h;
     x = rBoundRect.X();
     y = rBoundRect.Y();
 
     //images must be "resized" with each draw, disadvantage to shared resources
     //yet luckily the ZImage resize system is only two assignments, not actual stretching code
     //if resize is to be rewritten the shared resources system of Gewi should be reconsidered
-    w = static_cast<unsigned int>(rBoundRect.Width());
-    h = static_cast<unsigned int>(rBoundRect.Height());
+    w = rBoundRect.Width();
+    h = rBoundRect.Height();
     rGewi->Image(rPressedImage)->Resize(w,h);
     rGewi->Image(rNormalImage)->Resize(w,h);
 

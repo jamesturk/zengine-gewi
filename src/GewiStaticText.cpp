@@ -13,7 +13,7 @@
     \brief Implementation of GStaticText.
     
     Implementation of GStaticText, file to hold static text, labels and such.
-    <br>$Id: GewiStaticText.cpp,v 1.6 2003/06/12 09:32:33 cozman Exp $<br>
+    <br>$Id: GewiStaticText.cpp,v 1.7 2003/08/10 01:40:56 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -53,7 +53,7 @@ void GStaticText::Show()
     //images must call Resize with each draw (see shared resources rant)
     if(rBackgroundImage != GewiEngine::InvalidID)
     {
-        rGewi->Image(rBackgroundImage)->Resize(static_cast<unsigned int>(rBoundRect.Width()),static_cast<unsigned int>(rBoundRect.Height()));
+        rGewi->Image(rBackgroundImage)->Resize(rBoundRect.Width(),rBoundRect.Height());
         rGewi->Image(rBackgroundImage)->Draw(rBoundRect.X(),rBoundRect.Y());
     }
     rTextBuf.Draw(rBoundRect.X()+rXOff,rBoundRect.Y()+rYOff);   //draw text shifted by offset
@@ -62,7 +62,7 @@ void GStaticText::Show()
 
 void GStaticText::SetText(std::string text)
 {
-    int w,h;
+    float w,h;
 
     rText = text;
     rGewi->Font(rFont)->DrawText(rText,rTextBuf);

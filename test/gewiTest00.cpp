@@ -52,7 +52,7 @@ void Test1()
     GStaticText label;
     
     bg.Open("data/rainbow.bmp");
-    bg.Resize(ze->DisplayWidth(),ze->DisplayHeight());
+    bg.Resize(static_cast<float>(ze->DisplayWidth()),static_cast<float>(ze->DisplayHeight()));
 
     //opening the images//
     temp[0].Open("data/b1.bmp");
