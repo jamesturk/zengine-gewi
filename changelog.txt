@@ -1,0 +1,9 @@
+0.2.0
+    -Began doxygen documentation.
+    -Fixed bugs, cleaned up interface.
+    -BSD style license.
+    -Changed namespaces from ZE to Gewi.
+    -Sliders, Container.
+
+0.1.0
+    -Release to selected members of ZEngine forums and mailing list.
