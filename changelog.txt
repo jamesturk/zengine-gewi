@@ -1,5 +1,5 @@
 Gewi Version Log for Version 0.2.0
-$Id: changelog.txt,v 1.2 2003/06/16 04:47:54 cozman Exp $
+$Id: changelog.txt,v 1.3 2003/07/13 02:30:46 cozman Exp $
 
 0.2.0
     -Packaged for release (VC7 only).
@@ -16,4 +16,4 @@ $Id: changelog.txt,v 1.2 2003/06/16 04:47:54 cozman Exp $
     -Sliders, Container.
 
 0.1.0
-    -Release to selected members of ZEngine forums and mailing list.
+    Release to selected members of ZEngine forums and mailing list.

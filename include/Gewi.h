@@ -4,7 +4,7 @@
 
     Header file for the Gewi GUI lib, an addon for the ZEngine Game Engine, both from Concept of Zero, this is the 
     file that programs that wish to use should include.
-    <br>$Id: Gewi.h,v 1.2 2003/06/16 04:47:54 cozman Exp $<br>
+    <br>$Id: Gewi.h,v 1.3 2003/07/13 02:30:46 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -13,7 +13,7 @@
 
     \author James Turk
     \version 0.2.0
-    \date June 16th, 2003
+    \date July 12th, 2003
 
     \section Gewi About ZEngine and Gewi
     <br>

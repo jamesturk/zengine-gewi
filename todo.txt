@@ -1,6 +1,6 @@
 Gewi Todo List
     -More Widgets
-    -Linux
+    -Linux and other build targets
     -More examples.
 
 Feel free to contribute, Gewi is a side project and I will rely on the community for new widget ideas and such.
