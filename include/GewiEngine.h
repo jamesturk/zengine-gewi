@@ -13,7 +13,7 @@
     \brief Definition file for GewiEngine.
     
     Definition file for GewiEngine, core engine for Gewi GUI control.
-    <br>$id$<br>
+    <br>$Id: GewiEngine.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

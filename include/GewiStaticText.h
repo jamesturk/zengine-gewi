@@ -13,7 +13,7 @@
     \brief Definition file for GStaticText.
     
     Definition file for GStaticText, file to hold static text, labels and such.
-    <br>$id$<br>
+    <br>$Id: GewiStaticText.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

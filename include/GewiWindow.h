@@ -13,7 +13,7 @@
     \brief Definition file for GWindow.
     
     Definition file for GWindow, a basic window class based on GContainer.
-    <br>$id$<br>
+    <br>$Id: GewiWindow.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

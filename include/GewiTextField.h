@@ -13,7 +13,7 @@
     \brief Definition file for GTextField.
     
     Definition file for GTextField, text input area widget.
-    <br>$id$<br>
+    <br>$Id: GewiTextField.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

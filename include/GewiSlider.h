@@ -13,7 +13,7 @@
     \brief Definition file for GSlider, GHorizSlider and GVertSlider.
     
     Definition file for GSlider, GHorizSlider and GVertSlider, the slide-select classes for Gewi.
-    <br>$id$<br>
+    <br>$Id: GewiSlider.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

@@ -13,7 +13,7 @@
     \brief Definition file for GTextButton.
     
     Definition file for GTextButton, a GButton that has a text label.
-    <br>$id$<br>
+    <br>$Id: GewiTextButton.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

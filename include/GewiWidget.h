@@ -13,7 +13,7 @@
     \brief Definition file for GWidget.
     
     Definition file for GWidget, virtual widget base class.
-    <br>$id$<br>
+    <br>$Id: GewiWidget.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

@@ -13,7 +13,7 @@
     \brief Definition file for WidgetList.
     
     Definition file for WidgetList, a list of widgets used by GewiEngine and GContainers.
-    <br>$id$<br>
+    <br>$Id: GewiWidgetList.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 

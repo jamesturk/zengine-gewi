@@ -13,7 +13,7 @@
     \brief Definition file for GContainer.
     
     Definition file for GContainer, a barebones widget that can contain child widgets.
-    <br>$id$<br>
+    <br>$Id: GewiContainer.h,v 1.3 2003/05/19 23:56:05 cozman Exp $<br>
     \author James Turk
 **/
 
