@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiContainer.h
+    \file GewiContainer.cpp
     \brief Implementation of GContainer.
     
     Implementation of GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiContainer.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

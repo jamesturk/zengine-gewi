@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiTextButton.h
+    \file GewiTextButton.cpp
     \brief Implementation of GTextButton.
     
     Implementation of GTextButton, a GButton that has a text label.
-    <br>$Id: GewiTextButton.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiTextButton.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiStaticText.h
+    \file GewiStaticText.cpp
     \brief Implementation of GStaticText.
     
     Implementation of GStaticText, file to hold static text, labels and such.
-    <br>$Id: GewiStaticText.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiStaticText.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

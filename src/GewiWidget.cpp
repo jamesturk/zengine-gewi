@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiWidget.h
+    \file GewiWidget.cpp
     \brief Implementation of GWidget.
     
     Implementation of GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiWidget.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

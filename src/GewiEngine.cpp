@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiEngine.h
+    \file GewiEngine.cpp
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

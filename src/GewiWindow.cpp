@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiWindow.h
+    \file GewiWindow.cpp
     \brief Implementation of GWindow.
     
     Implementation of GWindow, a basic window class based on GContainer.
-    <br>$Id: GewiWindow.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiWindow.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

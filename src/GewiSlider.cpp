@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiSlider.h
+    \file GewiSlider.cpp
     \brief Implementation of GSlider, GHorizSlider and GVertSlider.
     
     Implementation of GSlider, GHorizSlider and GVertSlider, the slide-select classes for Gewi.
-    <br>$Id: GewiSlider.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiSlider.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

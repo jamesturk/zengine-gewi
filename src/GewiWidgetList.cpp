@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiWidgetList.h
+    \file GewiWidgetList.cpp
     \brief Implementation of WidgetList.
     
     Implementation of WidgetList, a list of widgets used by GewiEngine and GContainers.
-    <br>$Id: GewiWidgetList.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiWidgetList.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 

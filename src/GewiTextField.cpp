@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file GewiTextField.h
+    \file GewiTextField.cpp
     \brief Implementation of GTextField.
     
     Implementation of GTextField, text input area widget.
-    <br>$Id: GewiTextField.cpp,v 1.2 2003/05/20 00:06:10 cozman Exp $<br>
+    <br>$Id: GewiTextField.cpp,v 1.3 2003/05/20 00:08:55 cozman Exp $<br>
     \author James Turk
 **/
 
