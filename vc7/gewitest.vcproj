@@ -38,7 +38,6 @@
 SDLmain.lib
 OpenGL32.lib
 SDL_mixer.lib
-SDL_net.lib
 SDL_image.lib
 SDL_ttf.lib
 ZEngineS.lib

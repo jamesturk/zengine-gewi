@@ -13,7 +13,7 @@
     \brief Definition file for GContainer.
     
     Definition file for GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.h,v 1.6 2003/06/09 03:28:59 cozman Exp $<br>
+    <br>$Id: GewiContainer.h,v 1.7 2003/07/20 03:21:21 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -40,7 +40,7 @@ class GContainer : public GWidget
     <strong>reduce</strong> encapsulation. (For those keeping score, this is to many people the only effective use of 
     friend.)
     **/
-    friend GWidget; 
+    friend class Gewi::GWidget;
 
     protected:
         //! List of child widgets assigned to this container.
