@@ -13,7 +13,7 @@
     \brief Implementation of WidgetList.
     
     Implementation of WidgetList, a list of widgets used by GewiEngine and GContainers.
-    <br>$Id: GewiWidgetList.cpp,v 1.4 2003/06/09 03:28:43 cozman Exp $<br>
+    <br>$Id: GewiWidgetList.cpp,v 1.5 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -30,6 +30,8 @@ WidgetNode::WidgetNode() :
 {
 }
 
+//WidgetList keeps circular list of nodes, backwards traversal is key for proper draw order//
+
 void WidgetList::DeleteWidgetMem(WidgetNode *node)
 {
     if(node == mWidgetList) //special case if deleting top node
@@ -39,7 +41,7 @@ void WidgetList::DeleteWidgetMem(WidgetNode *node)
         else
             mWidgetList = NULL;
     }
-    //adjust links and actually delete node
+    //adjust links & delete node
     node->prev->next = node->next;
     node->next->prev = node->prev;
     delete node;
@@ -55,11 +57,11 @@ void WidgetList::AddWidget(WidgetNode *node)
 {
     if(mWidgetList == NULL)
     {
-        node->next = node->prev = node;
+        node->next = node->prev = node; //first node points to self in both directions
     }
     else
     {
-        //make connections
+        //make front & back connections
         node->next = mWidgetList;
         node->prev = mWidgetList->prev;
         mWidgetList->prev->next = node;
@@ -80,19 +82,17 @@ void WidgetList::DeleteWidget(GWidget *widget)
             if(cur->widget == widget)
                 found = cur;
             cur = cur->next;
-        } while(cur != mWidgetList && !found);
+        } while(cur != mWidgetList && !found);  //go through & find node
 
         if(found)
-        {
             DeleteWidgetMem(found);
-        }
     }
 }
 
 void WidgetList::DeleteWidgets()
 {
     WidgetNode *cur = mWidgetList;
-    while(mWidgetList)
+    while(mWidgetList)  //will be set to null on last widget
     {
         cur = cur->next;
         DeleteWidgetMem(cur->prev);
@@ -172,7 +172,7 @@ void WidgetList::ShowWidgets()
         do
         {
             cur = cur->prev;        //draw from back to front, through list in reverse
-            if(cur->widget->Visible())
+            if(cur->widget->Visible())  //visible checked here so each Show() doesn't need to bother 
                 cur->widget->Show();
         }while(cur != mWidgetList);
     }

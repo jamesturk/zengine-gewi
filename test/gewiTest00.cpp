@@ -41,6 +41,7 @@ void Test1()
     ZImage bg,temp[8];
     ZFont font;
     ResourceID id[8],fontID;
+    //all of the widgets//
     GWindow window;
     GTextButton txtButton;
     GTextField txtField,txtField2(&window);
@@ -53,6 +54,7 @@ void Test1()
     bg.Open("data/rainbow.bmp");
     bg.Resize(ze->Width(),ze->Height());
 
+    //opening the images//
     temp[0].Open("data/b1.bmp");
     temp[1].Open("data/b2.bmp");
     temp[2].Open("data/skin1.bmp");
@@ -63,6 +65,7 @@ void Test1()
     temp[7].Open("data/slider2.bmp");
     font.Open("data/axaxax.ttf",20);
 
+    //registering the resources//
     for(int i=0; i < 8; ++i)
     {
         temp[i].SetColorKey(255,0,255);
@@ -70,6 +73,7 @@ void Test1()
     }
     fontID = gewi->AddResource(&font);
 
+    //each widget must be created//
     window.Create(300,300,300,300,id[2]);
     button.Create(50,30,10,10,id[0],id[1]);
     txtField.Create(100,100,500,50,fontID,id[3],20,20);
@@ -98,7 +102,7 @@ void Test1()
             temp[2].SetAlpha(63+hSlider.GetPos()*64);
 
             bg.Draw(0,0);
-            gewi->Display();
+            gewi->Display();    //draws everything 
             ze->Update();
             
         }

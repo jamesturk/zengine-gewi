@@ -13,7 +13,7 @@
     \brief Implementation of GWidget.
     
     Implementation of GWidget, virtual widget base class.
-    <br>$Id: GewiWidget.cpp,v 1.6 2003/06/11 00:19:29 cozman Exp $<br>
+    <br>$Id: GewiWidget.cpp,v 1.7 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -40,6 +40,7 @@ GWidget::GWidget(GContainer *parent) :
     rRelY(0),
     rVisible(true)
 {
+    //widgets take care of all registration, making the parent processes virtually hidden
     if(rParent)
         rParent->AddChild(this);
     else
@@ -84,6 +85,7 @@ bool GWidget::Visible()
     return rVisible;
 }
 
+//it is important to remember rBoundRect is the actual position
 bool GWidget::MouseInWidget()
 {
     return rZE->MouseInRect(&rBoundRect.SDLrect());

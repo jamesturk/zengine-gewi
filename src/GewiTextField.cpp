@@ -13,7 +13,7 @@
     \brief Implementation of GTextField.
     
     Implementation of GTextField, text input area widget.
-    <br>$Id: GewiTextField.cpp,v 1.5 2003/06/11 00:19:29 cozman Exp $<br>
+    <br>$Id: GewiTextField.cpp,v 1.6 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -49,7 +49,7 @@ void GTextField::Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Ui
         else if(ch == '\b')
             rText = rText.length() ? rText.substr(0,rText.length()-1) : "";    //go back one character
 
-        rGewi->Font(rFont)->DrawText(rText.length() ? rText : " ",rBuffer);
+        rGewi->Font(rFont)->DrawText(rText.length() ? rText : "",rBuffer);
     }
 }
 

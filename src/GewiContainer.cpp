@@ -13,7 +13,7 @@
     \brief Implementation of GContainer.
     
     Implementation of GContainer, a barebones widget that can contain child widgets.
-    <br>$Id: GewiContainer.cpp,v 1.5 2003/06/09 03:28:43 cozman Exp $<br>
+    <br>$Id: GewiContainer.cpp,v 1.6 2003/06/12 09:32:32 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -21,6 +21,8 @@
 
 namespace Gewi
 {
+
+//all the work for GContainer is now done by WidgetList//
 
 void GContainer::AddChild(GWidget *widget)
 {
@@ -56,7 +58,7 @@ void GContainer::Move(float x, float y)
 
 void GContainer::Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, Uint16 mouseY, char ch)
 {
-    rChildList.Message(rawEvent,event,mouseX,mouseY,ch);
+    rChildList.Message(rawEvent,event,mouseX,mouseY,ch);    //rChildList does the work of passing the event correctly
 }
 
 void GContainer::Show()

@@ -13,7 +13,7 @@
     \brief Implementation of GSlider, GHorizSlider and GVertSlider.
     
     Implementation of GSlider, GHorizSlider and GVertSlider, the slide-select classes for Gewi.
-    <br>$Id: GewiSlider.cpp,v 1.4 2003/06/07 05:42:33 cozman Exp $<br>
+    <br>$Id: GewiSlider.cpp,v 1.5 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -58,9 +58,10 @@ void GSlider::SetPos(float pos)
         pos = static_cast<float>(rounded-rounded%rIncrement);   //snap to a multiple of increment
     }
 
+    //get within bounds
     if(pos < rMin)
         pos = rMin;
-    if(pos > rMax)
+    else if(pos > rMax)
         pos = rMax;
     rPos = pos;
 }
@@ -90,7 +91,7 @@ void GHorizSlider::Show()
     if(rPressed && !rZE->LButtonPressed() || !MouseInWidget())  //dont allow them to drag pointer out of box
         Message(NULL,GE_LUP,rZE->MouseX(),rZE->MouseY(),static_cast<char>(0));  //fake a message
 
-    //the slider is centered about the current position
+    //the slider is centered about the current position, altered if currently sliding
     if(rPressed)
         xPos = rZE->MouseX()-rGewi->Image(rSlider)->Width()/2.0f;
     else

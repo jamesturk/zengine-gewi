@@ -13,7 +13,7 @@
     \brief Implementation of GStaticText.
     
     Implementation of GStaticText, file to hold static text, labels and such.
-    <br>$Id: GewiStaticText.cpp,v 1.5 2003/06/11 00:19:29 cozman Exp $<br>
+    <br>$Id: GewiStaticText.cpp,v 1.6 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -37,7 +37,6 @@ void GStaticText::Create(float x, float y, float width, float height,
                          ResourceID font, std::string text, GewiJustify justify, ResourceID backgroundImg)
 {
     GWidget::Create(x,y,width,height);
-    
     rBackgroundImage = backgroundImg;
     rFont = font;
     rJustify = justify; //must justify pre-SetText
@@ -51,12 +50,12 @@ void GStaticText::Message(SDL_Event *rawEvent, GewiEvent event, Uint16 mouseX, U
 
 void GStaticText::Show()
 {
-    //images must call Resize with each draw (shared resources)
+    //images must call Resize with each draw (see shared resources rant)
     if(rBackgroundImage != GewiEngine::InvalidID)
+    {
         rGewi->Image(rBackgroundImage)->Resize(static_cast<unsigned int>(rBoundRect.Width()),static_cast<unsigned int>(rBoundRect.Height()));
-
-    if(rBackgroundImage != GewiEngine::InvalidID)
         rGewi->Image(rBackgroundImage)->Draw(rBoundRect.X(),rBoundRect.Y());
+    }
     rTextBuf.Draw(rBoundRect.X()+rXOff,rBoundRect.Y()+rYOff);   //draw text shifted by offset
 }
 
@@ -71,27 +70,21 @@ void GStaticText::SetText(std::string text)
     w=rTextBuf.Width();
     h=rTextBuf.Height();
 
-    //center each by default
-    rXOff = static_cast<int>(rBoundRect.Width()-w)/2;
-    rYOff = static_cast<int>(rBoundRect.Height()-h)/2;
-
+    //left,right,center
     if(rJustify & GJ_LEFT)
-    {
         rXOff = 0;
-    }
     else if(rJustify & GJ_RIGHT)
-    {
         rXOff = static_cast<int>(rBoundRect.Width()-w);
-    }
+    else
+        rXOff = static_cast<int>(rBoundRect.Width()-w)/2;
 
+    //top,bottom,center
     if(rJustify & GJ_TOP)
-    {
         rYOff = 0;
-    }
     else if(rJustify & GJ_BOTTOM)
-    {
         rYOff = static_cast<int>(rBoundRect.Height()-h);
-    }
+    else
+        rYOff = static_cast<int>(rBoundRect.Height()-h)/2;
 }
 
 std::string GStaticText::GetText()

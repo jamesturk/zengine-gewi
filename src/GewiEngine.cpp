@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.7 2003/06/11 00:19:29 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.8 2003/06/12 09:32:33 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -24,7 +24,7 @@ namespace Gewi
 {
 
 VersionInfo GewiEngine::Version(0,2,0,"dev");
-VersionInfo GewiEngine::MinZEVersion(0,8,4,"dev");
+VersionInfo GewiEngine::MinZEVersion(0,8,4,"dev");  //important to keep this accurate
 GewiEngine *GewiEngine::sInstance=NULL;
 
 GewiEngine::GewiEngine()
@@ -40,7 +40,7 @@ GewiEngine::GewiEngine()
 
     ze->SetEventFilter((SDL_EventFilter)GewiEngine::EventFilter);
     SDL_EnableUNICODE(1);   //needed for the key translation
-    SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL);
+    SDL_EnableKeyRepeat(SDL_DEFAULT_REPEAT_DELAY,SDL_DEFAULT_REPEAT_INTERVAL);  //more like typing, less like game
 }
 
 GewiEngine* GewiEngine::GetInstance()
@@ -67,10 +67,11 @@ void GewiEngine::ReleaseInstance()
 
 int GewiEngine::EventFilter(SDL_Event *event)
 {
-    static char noChar = static_cast<char>(0);
+    static char noChar = '\0';
     GewiEngine *gewi = GewiEngine::GetInstance();
     char ch;
 
+    //called inside ZEngine::CheckEvents
     switch(event->type)
     {
         case SDL_MOUSEBUTTONDOWN:
@@ -93,28 +94,19 @@ int GewiEngine::EventFilter(SDL_Event *event)
             ch = TranslateKey(event->key.keysym);
             gewi->SendMessage(event,GE_KUP,0,0,ch);
             break;
-        case SDL_QUIT:
-            GewiEngine::ReleaseInstance();
-            break;
         default:
             break;
     }
-    return 1;   //pass the event on
+    return 1;   //pass the event on, allowing ZEngine to do what it needs
 }
 
 char GewiEngine::TranslateKey(SDL_keysym key)
 {
-    char ch;
-
-    if(key.unicode && key.unicode <= 255)
-        ch = static_cast<char>(key.unicode);
+    //this is why unicode must be enabled, without this it'd be one massive switch statement
+    if(key.unicode > 0 && key.unicode <= 255)
+        return static_cast<char>(key.unicode);
     else
-        ch = static_cast<char>(127);
-
-    if(ch >= 'a' && ch <= 'z' && (key.mod & KMOD_SHIFT))
-        ch -= 20;   //capitalize
-
-    return ch;
+        return static_cast<char>(127);
 }
 
 void GewiEngine::Display()
