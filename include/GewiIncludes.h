@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file ZE_ZConfigFile.h
-    \brief Definition file for ZConfigFile.
+    \file GewiIncludes.h
+    \brief Include file for Gewi.
     
-    Definition file for ZConfigFile, an INI-style config file format.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Include file for Gewi, contains external includes for Gewi.
+    <br>$id$<br>
     \author James Turk
 **/
 

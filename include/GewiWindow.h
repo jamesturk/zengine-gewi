@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file ZE_ZConfigFile.h
-    \brief Definition file for ZConfigFile.
+    \file GewiWindow.h
+    \brief Definition file for GWindow.
     
-    Definition file for ZConfigFile, an INI-style config file format.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Definition file for GWindow, a basic window class based on GContainer.
+    <br>$id$<br>
     \author James Turk
 **/
 

@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file ZE_ZConfigFile.h
-    \brief Definition file for ZConfigFile.
+    \file GewiStaticText.h
+    \brief Definition file for GStaticText.
     
-    Definition file for ZConfigFile, an INI-style config file format.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Definition file for GStaticText, file to hold static text, labels and such.
+    <br>$id$<br>
     \author James Turk
 **/
 

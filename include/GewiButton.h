@@ -10,10 +10,10 @@
 
 /*!
     \file GewiButton.h
-    \brief Definition file for GewiButton.
+    \brief Definition file for GButton.
     
-    Definition file for GewiButton, a simple button class.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Definition file for GButton, a simple button class.
+    <br>$id$<br>
     \author James Turk
 **/
 

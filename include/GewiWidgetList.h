@@ -9,11 +9,11 @@
 *******************************************************************************/
 
 /*!
-    \file ZE_ZConfigFile.h
-    \brief Definition file for ZConfigFile.
+    \file GewiWidgetList.h
+    \brief Definition file for WidgetList.
     
-    Definition file for ZConfigFile, an INI-style config file format.
-    <br>$ id: ZE_ZConfigFile.h,v 1.9 2003/02/10 04:40:16 cozman Exp $<br>
+    Definition file for WidgetList, a list of widgets used by GewiEngine and GContainers.
+    <br>$id$<br>
     \author James Turk
 **/
 
