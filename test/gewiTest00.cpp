@@ -113,8 +113,6 @@ void Test1()
 
 int main(int argc, char *argv[])
 {
-    ZEngine *ze = ZEngine::GetInstance();
-
     Init();
     Test1();
     

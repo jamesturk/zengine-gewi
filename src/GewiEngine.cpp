@@ -13,7 +13,7 @@
     \brief Implementation of GewiEngine.
     
     Implementation of GewiEngine, core engine for Gewi GUI control.
-    <br>$Id: GewiEngine.cpp,v 1.8 2003/06/12 09:32:33 cozman Exp $<br>
+    <br>$Id: GewiEngine.cpp,v 1.9 2003/06/16 04:47:54 cozman Exp $<br>
     \author James Turk
 **/
 
@@ -23,8 +23,8 @@
 namespace Gewi
 {
 
-VersionInfo GewiEngine::Version(0,2,0,"dev");
-VersionInfo GewiEngine::MinZEVersion(0,8,4,"dev");  //important to keep this accurate
+VersionInfo GewiEngine::Version(0,2,0);
+VersionInfo GewiEngine::MinZEVersion(0,8,4);  //important to keep this accurate
 GewiEngine *GewiEngine::sInstance=NULL;
 
 GewiEngine::GewiEngine()

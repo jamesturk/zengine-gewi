@@ -1,5 +1,15 @@
+Gewi Version Log for Version 0.2.0
+$Id: changelog.txt,v 1.2 2003/06/16 04:47:54 cozman Exp $
+
 0.2.0
-    -Began doxygen documentation.
+    -Packaged for release (VC7 only).
+    -Revision of all source code, cleaned up various areas.
+    -Fixed a few bugs involving empty containers.
+    -Faster + smaller container methods.
+    -Slightly modified event handling (will rely on ZEngine 0.8.4).
+    -Added ZEngine version check.
+    -Changed memory handling and resource management usage.
+    -Wrote all doxygen documentation.
     -Fixed bugs, cleaned up interface.
     -BSD style license.
     -Changed namespaces from ZE to Gewi.

@@ -89,10 +89,16 @@
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc">
 			<File
+				RelativePath="..\include\Gewi.h">
+			</File>
+			<File
 				RelativePath="..\include\GewiButton.h">
 			</File>
 			<File
 				RelativePath="..\include\GewiContainer.h">
+			</File>
+			<File
+				RelativePath="..\include\GewiDefines.h">
 			</File>
 			<File
 				RelativePath="..\include\GewiEngine.h">
