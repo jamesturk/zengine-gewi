@@ -14,26 +14,27 @@
 using namespace ZE;
 using namespace Gewi;
 
-void Init()
+bool Initialize()
 {
-    ZEngine *ze = ZEngine::GetInstance();
-
-    ZConfigFile cfg("gewiTest.zcf");
-    int w,h,bpp;
+    ZEngine *engine = ZEngine::GetInstance();
+    ZConfigFile cfg("tests.zcf");
+    int w,h,bpp,rate;
     bool fs;
     std::string title;
 
-    w = cfg.GetInt("screen","width",800);
-    h = cfg.GetInt("screen","height",600);
-    bpp = cfg.GetInt("screen","bpp",32);
-    fs = cfg.GetBool("screen","fullscreen",false);
-    title = cfg.GetString("screen","title","Gewi Test");
+    w = cfg.GetInt("ZTimerTest","width",800);
+    h = cfg.GetInt("ZTimerTest","height",600);
+    bpp = cfg.GetInt("ZTimerTest","bpp",32);
+    fs = cfg.GetBool("ZTimerTest","fullscreen",false);
+    title = cfg.GetString("ZTimerTest","title","Gewi Test");
+    rate = cfg.GetInt("ZTimerTest","framerate",60);
 
-    ze->SetupDisplay(w,h,bpp,fs);
-    ze->CreateDisplay(title);
+    engine->SetupDisplay(w,h,bpp,fs);
+    engine->SetDesiredFramerate(rate);
+    return engine->CreateDisplay(title);
 }
 
-void Test1()
+void Test()
 {
     ZEngine *ze = ZEngine::GetInstance();
     GewiEngine *gewi = GewiEngine::GetInstance();
@@ -104,7 +105,6 @@ void Test1()
             bg.Draw(0,0);
             gewi->Display();    //draws everything 
             ze->Update();
-            
         }
 
     } while(!ze->QuitRequested());
@@ -113,8 +113,8 @@ void Test1()
 
 int main(int argc, char *argv[])
 {
-    Init();
-    Test1();
+    if(Initialize())
+        Test();
     
     GewiEngine::ReleaseInstance();
     ZEngine::ReleaseInstance();
