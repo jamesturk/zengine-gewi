@@ -37,11 +37,11 @@ void Test1()
     ZEngine *ze = ZEngine::GetInstance();
     GewiEngine *gewi = GewiEngine::GetInstance();
 
-    ZImage bg,buf,temp[8];
+    ZImage bg,temp[8];
     ZFont font;
     ResourceID id[8],fontID;
     GWindow window;
-    GTextButton txtButton;    
+    GTextButton txtButton;
     GTextField txtField,txtField2(&window);
     GButton button(&window);
     GHorizSlider hSlider;
@@ -60,7 +60,7 @@ void Test1()
     temp[5].Open("data/slider.bmp");
     temp[6].Open("data/bg4.bmp");
     temp[7].Open("data/slider2.bmp");
-    font.Open("c:\\windows\\fonts\\comic.ttf",20);
+    font.Open("data/axaxax.ttf",20);
 
     for(int i=0; i < 8; ++i)
     {
@@ -85,47 +85,36 @@ void Test1()
 
         if(ze->IsActive())
         {
-            if(ze->KeyIsPressed(SDLK_ESCAPE))
+            if(ze->KeyIsPressed(SDLK_ESCAPE) || hoverButton.IsPressed())
                 ze->RequestQuit();
 
-            font.DrawText(FormatStr("%f",hSlider.GetPos()),buf);
-            bg.Draw(0,0);
+            if( (button.IsPressed() && window.Visible()) || (txtButton.IsPressed() && !window.Visible()) )
+            {
+                window.ToggleVisible();
+                txtButton.SetState(false);
+                button.SetState(false);
+            }
             temp[2].SetAlpha(63+hSlider.GetPos()*64);
+
+            bg.Draw(0,0);
             gewi->Display();
-
-            buf.Draw(0.0f,vSlider.GetPos());
-            
-            if(button.IsPressed() && window.Visible())
-            {
-                window.ToggleVisible();
-                txtButton.SetState(false);
-                button.SetState(false);
-            }
-            if(txtButton.IsPressed() && !window.Visible())
-            {
-                window.ToggleVisible();
-                button.SetState(false);
-                txtButton.SetState(false);
-            }
-            if(hoverButton.IsPressed())
-                ze->RequestQuit();
-
             ze->Update();
             
         }
 
     } while(!ze->QuitRequested());
-
-    
 }
+
 
 int main(int argc, char *argv[])
 {
-    Init();
-    
-    Test1();
+    ZEngine *ze = ZEngine::GetInstance();
 
+    Init();
+    Test1();
+    
     GewiEngine::ReleaseInstance();
     ZEngine::ReleaseInstance();
+
     return 0;
 }
